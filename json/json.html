@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JSON</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        console.log('hi');
+        var url = new URL(window.location.href);
+var c = url.searchParams.get("c");
+console.log(c);
+    </script>
+</head>
+<body>
+	<div>
+		JSON Page1
+	</div>
+    <p id="demo"></p>
+    <script>
+        
+        fetch("data.json")
+  .then(response => response.json())
+  .then(json => console.log(json));
+
+        const txt = '{"name":"John", "age":30, "city":"New York"}'
+        const obj = JSON.parse(txt);
+        document.getElementById("demo").innerHTML = obj.name + ", " + obj.age;
+        </script>
+</body>
+</html>
